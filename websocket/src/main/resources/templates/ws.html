@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>SpringBoot 广播式</title>
+</head>
+<body>
+
+    <input id="name" name="name" />
+<input type="button" onclick="sendName()" value="发送"/>
+<input type="button" value="链接" onclick="connect()" />
+
+</body>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+<script src="http://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js"></script>
+<script type="text/javascript">
+    var stompClient = null;
+    function connect(){
+        var socket = new SockJS("/endpointWisely");
+        stompClient = Stomp.over(socket);
+        stompClient.connect({},function(frame){
+            console.log('connected:'+frame);
+            stompClient.subscribe('/topic/getResponse',function(response){
+                alert(JSON.parse(response.body).responseMessage);
+            });
+        });
+    }
+
+    function sendName(){
+        var name = $("#name").val();
+        stompClient.send("/welcome",{},JSON.stringify({'name':name}));
+    }
+
+</script>
+</html>

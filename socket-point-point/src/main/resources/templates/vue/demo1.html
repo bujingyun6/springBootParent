@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<body>
+
+<!--数据双向绑定-->
+<div id="app">
+    dsf:{{ message }}
+    <input v-model="message" name="ss">
+</div>
+
+
+<div id="exmaple">
+    数据:{{ a }}
+    <input v-model="a" name="ss">
+</div>
+
+</body>
+<script >
+
+    //数据双向绑定
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        }
+    })
+
+   //Vue属性与方法 vm代理data
+    var data = {a:1};
+    var vm = new Vue({
+        el:"#exmaple",
+        data:data
+    });
+
+    alert(vm.$data === data);//true
+    alert(vm.$el === document.getElementById("exmaple"));//true
+    //方法
+    vm.$watch("a",function(newVal,oldVal){// 这个回调将在 `vm.a`  改变后调用
+        alert("老的值："+oldVal + "  新的值为：" + newVal);
+    });
+    data.a = 5;
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<body>
+
+<div v-for="item in list" transition="stagger" stagger="100"></div>
+
+</body>
+<script>
+    Vue.transition('stagger', {
+        stagger: function (index) {
+            // 每个过渡项目增加 50ms 延时
+            // 但是最大延时限制为 300ms
+            return Math.min(300, index * 50);
+        }
+    })
+
+</script>
+</html>
