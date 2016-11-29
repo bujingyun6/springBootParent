@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BootParent.iml" filepath="$PROJECT_DIR$/BootParent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/angular_web/angular_web.iml" filepath="$PROJECT_DIR$/angular_web/angular_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/properties_test/properties_test.iml" filepath="$PROJECT_DIR$/properties_test/properties_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/socket-point-point/socket-point-point.iml" filepath="$PROJECT_DIR$/socket-point-point/socket-point-point.iml" />
       <module fileurl="file://$PROJECT_DIR$/websocket/websocket.iml" filepath="$PROJECT_DIR$/websocket/websocket.iml" />
     </modules>

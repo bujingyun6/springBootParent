@@ -22,14 +22,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="angular_web" />
         <module name="point-point" />
+        <module name="properties_test" />
         <module name="socket-point-point" />
         <module name="websocket" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="angular_web" target="1.6" />
       <module name="BootParent" target="1.6" />
       <module name="point-point" target="1.6" />
+      <module name="properties_test" target="1.6" />
       <module name="socket-point-point" target="1.6" />
       <module name="websocket" target="1.6" />
     </bytecodeTargetLevel>
